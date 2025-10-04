@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // Fungsi untuk memeriksa status login
 function is_logged_in() {
     return isset($_SESSION['X-H0UR']);
